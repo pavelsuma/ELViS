@@ -1,0 +1,8 @@
+
+defaults:
+  - test_dataset
+
+name: 'roxford5k'
+data_dir: /path/to/roxford5k/jpg
+test_gnd_file: 'gnd_roxford5k.pkl'
+map_k: 10e7

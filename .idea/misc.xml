@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="lcgpu3" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.13.1 (sftp://sumapave@rci:22/home/sumapave/pyconfig_2025a)" project-jdk-type="Python SDK" />
+</project>

@@ -1,0 +1,6 @@
+
+defaults:
+  - test_dataset
+
+name: 'rp2k-test'
+data_dir: /path/to/rp2k/

@@ -1,0 +1,6 @@
+
+defaults:
+  - test_dataset
+
+name: 'met'
+data_dir: /path/to/INSTRE/jpg/

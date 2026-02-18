@@ -1,0 +1,6 @@
+
+defaults:
+  - test_dataset
+
+name: 'sop-1k'
+data_dir: /path/to/sop/

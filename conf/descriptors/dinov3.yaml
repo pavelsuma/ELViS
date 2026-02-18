@@ -1,0 +1,6 @@
+
+model_name: dinov3_vitl16
+desc_name: dinov3
+dim_global_features: 1024
+dim_local_features: 1024
+patch_size: 16

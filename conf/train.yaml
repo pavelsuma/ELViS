@@ -1,0 +1,31 @@
+defaults:
+  - dataset@train_dataset: gldv2
+  - dataset@val_dataset: gldv2-val
+  - descriptors: dinov2
+  - model: elvis
+  - _self_
+
+epochs: 15
+lr: 0.0002
+weight_decay: 0.0005
+beta: 10
+seed: 0
+cpu: False
+comp_fp16: False
+
+data_root:
+exp_name: ${train_dataset.name}_${desc_name}
+
+resume:
+teacher:
+
+val_freq: 1
+print_freq: 100
+num_workers: 4
+
+hydra:
+  run:
+    dir: exp/${exp_name}
+  sweep:
+    dir: exp/${exp_name}
+    subdir: ${seed}

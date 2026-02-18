@@ -1,0 +1,14 @@
+# @package _global_
+
+desc_variable_min: 10
+scheduler: 'cos'
+
+model:
+  name: 'ames'
+  dim_feedforward: 1024
+  nhead: 2
+  num_encoder_layers: 5
+  activation: "relu"
+  normalize_before: False
+  model_dim: 128
+  binarized: False

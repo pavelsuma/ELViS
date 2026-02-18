@@ -1,0 +1,6 @@
+
+model_name: dinov2_vitb14_reg
+desc_name: dinov2
+dim_global_features: 768
+dim_local_features: 768
+patch_size: 14

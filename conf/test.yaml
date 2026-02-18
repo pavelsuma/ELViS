@@ -1,0 +1,11 @@
+defaults:
+  - dataset@test_dataset: roxford
+  - descriptors: dinov2
+  - model: elvis
+  - _self_
+
+data_root:
+cpu: False
+model_path:
+seed: 0
+num_workers: 4

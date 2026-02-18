@@ -1,0 +1,7 @@
+
+defaults:
+  - test_dataset
+
+name: 'gldv2-test'
+test_gnd_file: 'gnd_gldv2-test.pkl'
+data_dir: /path/to/gld/v2/images/

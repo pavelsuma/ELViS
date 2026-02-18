@@ -1,0 +1,6 @@
+
+model_name: vit_base_patch16_siglip_512.webli
+desc_name: siglip
+dim_global_features: 768
+dim_local_features: 768
+patch_size: 16

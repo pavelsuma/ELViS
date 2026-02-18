@@ -1,0 +1,7 @@
+
+defaults:
+  - test_dataset
+
+name: 'instre'
+test_gnd_file: 'gnd_instre.pkl'
+data_dir: /path/to/INSTRE/jpg/

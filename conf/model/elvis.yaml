@@ -1,0 +1,13 @@
+# @package _global_
+
+desc_variable_min: 100
+scheduler: 'warmcos'
+
+model:
+  name: 'elvis'
+  embed_dim: 16
+  proj_dim: 64
+  model_dim: 128
+  binarized: False
+  sh_iter: 10
+  sh_temp: 10.

@@ -1,0 +1,18 @@
+
+name:
+desc_dir: ${data_root}/${.name}
+test_gnd_file:
+batch_size: 300
+query_desc_num: 600
+db_desc_num: 600
+nn_file: nn_${desc_name}.pkl
+
+num_rerank:
+  - 100
+  - 400
+lamb:
+  - 0.5
+temp:
+  - 0.5
+
+pin_memory : True

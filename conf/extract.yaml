@@ -1,0 +1,35 @@
+defaults:
+  - dataset: roxford
+  - descriptors: dinov2
+  - _self_
+
+cpu: False
+batch_size: 256
+detector: True
+binarization: True
+store_fp16: True
+comp_fp16: False
+desc_type:
+  - local
+  - cls
+  - w-avg
+  - og-avg
+shortlist: 0
+topk: 700
+seed: 1234
+imsize: 768
+bbox: False
+scale_list:
+  - 1.0
+
+num_workers: 8
+
+hydra:
+  run:
+    dir: logs
+  sweep:
+    dir: logs
+
+  callbacks:
+    log_job_return:
+      _target_: conf.callbacks.LogJobReturnCallback

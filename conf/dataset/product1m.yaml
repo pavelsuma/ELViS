@@ -1,0 +1,7 @@
+
+defaults:
+  - test_dataset
+
+name: 'product1m'
+test_gnd_file: 'gnd_product1m.pkl'
+data_dir: /path/to/Product1M/
