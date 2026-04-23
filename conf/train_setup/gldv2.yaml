@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - ../dataset@train_dataset: gldv2
+  - ../dataset@val_dataset: gldv2-val
+  - ../dataset@test_dataset: roxford
+  - _self_
+
+epochs: 10
+lr: 0.0005
+weight_decay: 0.0005

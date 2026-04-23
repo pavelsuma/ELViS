@@ -4,4 +4,4 @@ defaults:
 
 name: 'gldv2-val'
 test_gnd_file: 'gnd_gldv2-test.pkl'
-desc_dir: ${data_root}/gldv2-test
+desc_dir: ${data_root}/gldv2-val

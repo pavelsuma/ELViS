@@ -2,12 +2,10 @@ defaults:
   - dataset@train_dataset: gldv2
   - dataset@val_dataset: gldv2-val
   - descriptors: dinov2
+  - train_setup: gldv2
   - model: elvis
   - _self_
 
-epochs: 15
-lr: 0.0002
-weight_decay: 0.0005
 beta: 10
 seed: 0
 cpu: False
@@ -29,3 +27,7 @@ hydra:
   sweep:
     dir: exp/${exp_name}
     subdir: ${seed}
+
+  callbacks:
+    log_job_return:
+      _target_: conf.callbacks.LogJobReturnCallback

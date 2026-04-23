@@ -59,7 +59,8 @@ def train_one_epoch(
             student_sims = torch.cat([p_sims, n_sims], 0)
             labels = torch.cat([torch.ones_like(p_sims), torch.zeros_like(n_sims)], dim=0)
             loss = class_loss(student_sims, labels).mean()
-            loss = loss + beta * dist_loss(student_logits, teacher_logits).mean() if beta > 0 else 0
+            if beta > 0:
+                loss = loss + beta * dist_loss(student_logits, teacher_logits).mean()
 
         acc = ((torch.sigmoid(student_sims) > 0.5).long() == labels.long()).float().mean()
 

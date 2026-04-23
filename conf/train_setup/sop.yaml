@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - ../dataset@train_dataset: sop
+  - ../dataset@val_dataset: sop-val
+  - ../dataset@test_dataset: sop-1k
+  - _self_
+
+epochs: 30
+lr: 0.001
+weight_decay: 0.0005

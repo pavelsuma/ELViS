@@ -4,8 +4,6 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset
 
-from .utils import pickle_load
-
 
 class TensorFileDataset(Dataset):
     def __init__(self,
@@ -84,17 +82,10 @@ class TrainDataset(TensorFileDataset):
 
 
 class TestDataset(TensorFileDataset):
-    def __init__(self, *args, desc_num, nn_file=None, **kwargs):
+    def __init__(self, *args, desc_num, map_k=None, **kwargs):
         super().__init__(*args, **kwargs)
         self.desc_num = desc_num
-
-        if nn_file is not None:
-            nn_inds_path = os.path.join(self.desc_dir, nn_file)
-            self.cache_nn = pickle_load(nn_inds_path)
-
-            if self.name == 'gldv2-val':
-                self.num_samples = self.num_samples - 750
-                self.cache_nn = self.cache_nn[:, :-750]
+        self.map_k = map_k
 
     def __getitem__(self, batch_index):
         idx = np.sort(np.unique(batch_index)).tolist()

@@ -3,8 +3,17 @@ from elvis.models.elvis import Elvis
 
 dependencies = ["torch"]
 
-def dinov2_elvis(*, pretrained: bool = True, **kwargs):
-    return Elvis(desc_name='dinov2', local_dim=768, pretrained='dinov2_elvis.pt' if pretrained else None, binarized=False, **kwargs)
+def siglip2_elvis_gld(*, pretrained: bool = True, **kwargs):
+    return Elvis(desc_name='siglip2', local_dim=768, pretrained='siglip2_elvis_gld.pt' if pretrained else None, binarized=False, **kwargs)
+
+def dinov3_elvis_gld(*, pretrained: bool = True, **kwargs):
+    return Elvis(desc_name='dinov3', local_dim=768, pretrained='dinov3_elvis_gld.pt' if pretrained else None, binarized=False, **kwargs)
+
+def dinov2_elvis_gld(*, pretrained: bool = True, **kwargs):
+    return Elvis(desc_name='dinov2', local_dim=768, pretrained='dinov2_elvis_gld.pt' if pretrained else None, binarized=False, **kwargs)
+
+def dinov2_elvis_sop(*, pretrained: bool = True, **kwargs):
+    return Elvis(desc_name='dinov2', local_dim=768, pretrained='dinov2_elvis_sop.pt' if pretrained else None, binarized=False, **kwargs)
 
 def dinov2_ames(*, pretrained: bool = True, **kwargs):
     return AMES(desc_name='dinov2', local_dim=768, pretrained='dinov2_ames.pt' if pretrained else None, binarized=False, **kwargs)

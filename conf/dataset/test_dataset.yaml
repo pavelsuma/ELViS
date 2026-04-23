@@ -2,10 +2,11 @@
 name:
 desc_dir: ${data_root}/${.name}
 test_gnd_file:
-batch_size: 300
+batch_size: 600
 query_desc_num: 600
 db_desc_num: 600
-nn_file: nn_${desc_name}.pkl
+nn_file: nn_${descriptors.desc_name}.pkl
+map_k: 100
 
 num_rerank:
   - 100

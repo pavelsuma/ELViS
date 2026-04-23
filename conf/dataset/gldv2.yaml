@@ -1,10 +1,10 @@
 
 name: gldv2
 desc_dir: ${data_root}/gldv2
-train_txt: train_750k.txt
+train_txt: train.txt
 query_desc_num: 400
 db_desc_num: 400
 num_candidates: 300
-batch_size: 300
+batch_size: 600
 nn_file: 'nn_dinov2.pkl'
 pin_memory : True

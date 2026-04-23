@@ -9,3 +9,14 @@ cpu: False
 model_path:
 seed: 0
 num_workers: 4
+
+hydra:
+  run:
+    dir: ${data_root}/exp/${exp_name}/test
+  sweep:
+    dir: ${data_root}/exp/${exp_name}/test
+    subdir: ${test_dataset.name}/${seed}/${test_dataset.query_desc_num}-${test_dataset.db_desc_num}
+
+  callbacks:
+    log_job_return:
+      _target_: conf.callbacks.LogJobReturnCallback

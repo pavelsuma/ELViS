@@ -55,7 +55,6 @@ class Elvis(Matcher):
             self.load_state_dict(torch.hub.load_state_dict_from_url(os.path.join(_BASE_URL, 'elvis', 'networks', pretrained),
                                                                     map_location=torch.device('cpu'))['state'])
         else:
-            nn.init.trunc_normal_(self.mtc_token, std=.02)
             self.apply(self._init_weights)
 
     def _init_weights(self, m):

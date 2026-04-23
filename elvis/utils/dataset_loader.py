@@ -111,7 +111,8 @@ def get_test_sets(desc_name, test_dataset):
     gallery_set = TestDataset(test_dataset.name, test_dataset.desc_dir, desc_name + '_gallery_local.hdf5',
                                    desc_num=test_dataset.db_desc_num)
     query_set   = TestDataset(test_dataset.name, test_dataset.desc_dir, desc_name + '_query_local.hdf5',
-                                    desc_num=test_dataset.query_desc_num, gnd_data=test_gnd_data, nn_file=test_dataset.nn_file)
+                                    desc_num=test_dataset.query_desc_num, gnd_data=test_gnd_data,
+                                    map_k=test_dataset.map_k)
 
     return query_set, gallery_set
 
@@ -125,4 +126,6 @@ def get_test_loaders(desc_name, test_dataset, num_workers=8):
     query_loader = DataLoader(query_set, sampler=query_sampler, batch_size=1, num_workers=num_workers, pin_memory=test_dataset.pin_memory, collate_fn=basic_collate)
     gallery_loader = DataLoader(gallery_set, sampler=gallery_sampler, batch_size=1, num_workers=num_workers, pin_memory=test_dataset.pin_memory, collate_fn=basic_collate)
 
-    return query_loader, gallery_loader
+    global_nn = pickle_load(os.path.join(test_dataset.desc_dir, test_dataset.nn_file))
+
+    return query_loader, gallery_loader, global_nn
